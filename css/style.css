@@ -33,6 +33,25 @@ iframe{
   padding:20px;
 }
 
+input{
+  width:25%;
+  height:50px;
+}
+
+button{
+  height:50px;
+}
+@media only screen and (max-width:480px){
+  input[type=date], textarea {
+    width:75%;
+    height:50px;
+  }
+  button{
+    width:75%;
+    height:30px;
+  }
+}
+
 /******************************************
 /* ADDITIONAL STYLES
 /*******************************************/
