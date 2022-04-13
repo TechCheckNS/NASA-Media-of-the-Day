@@ -14,10 +14,14 @@ function getFetch(){
 
         if( data.media_type === 'image'){
             document.querySelector('img').src = data.hdurl
+            document.querySelector('iframe').style.display = 'none';
+            document.querySelector('img').style.display = '';
+
 
         }else if(data.media_type === 'video'){
             document.querySelector('iframe').src = data.url
-            document.querySelector('image').src = 'null'
+            document.querySelector('img').style.display = 'none';
+            document.querySelector('iframe').style.display = '';
         }
 
 
