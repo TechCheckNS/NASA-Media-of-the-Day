@@ -5,25 +5,34 @@
     	<meta name="description" content="This is where your description goes">
     	<meta name="keywords" content="one, two, three">
 
-		<title>Title in the tab</title>
+		<title>NASA - Media of the Day</title>
 
 		<!-- external CSS link -->
 		<link rel="stylesheet" href="css/normalize.css">
 		<link rel="stylesheet" href="css/style.css">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&family=Source+Sans+Pro:wght@300&display=swap" rel="stylesheet"> 
 	</head>
 	<body>
+		<section class="fullBody">
 		<section class="search">
-		<h1>Media of the day</h1>
+		<h1>NASA - Media of the day</h1>
 		<input type="date" name="" value="">
-		<button type="button" name="button">Get Media</button>
+		<section class = "navigation">
+		<button type = "button" class="prevMedia">Previous</button>
+		<button type="button" name="button" class="getMedia">Get Media</button>
+		<button type = "button" class="nextMedia">Next</button>
+		</section>
 		</section>
 		<section class="info">
-		<h2>NASA</h2>
 		<h3>Explanation</h3>
-		<img src="" alt="">
-		<iframe src = ""></iframe>
+		<section class= "mediaSection">
+		<img src="" alt="" class = imgOfDay>
+		<iframe src = "" class = movOfDay></iframe>
 		</section>
-
+		</section>
+	</section>
 		<script type="text/javascript" src="js/main.js"></script>
 	</body>
 </html>
