@@ -1,9 +1,9 @@
 
 fetchToday()
 
-document.querySelector('.prevMedia').addEventListener('click', getFetch)
+document.querySelector('.prevMedia').addEventListener('click', fetchPrev)
 document.querySelector('.getMedia').addEventListener('click', getFetch)
-document.querySelector('.nextMedia').addEventListener('click', getFetch)
+document.querySelector('.nextMedia').addEventListener('click', fetchNext)
 
 function getFetch(){
   const choice = document.querySelector('input').value.toLowerCase()
@@ -71,7 +71,10 @@ function fetchToday(){
   }
 
   function fetchNext(){
-    const choice = document.querySelector('input').value.toLowerCase()+1
+    const convStrDate = document.querySelector('input').value.split('-')
+    const convArrDate = convStrDate.map(number)
+    let dateNum = convArrDate[0]*365.25 + convArrDate[1]*30.4375 + convArrDate[2]
+    console.log(dateNum)
     const url = `https://api.nasa.gov/planetary/apod?api_key=0Cgc2Xy7xAmaWHlG3pGwrrwDvtCVzbHNqgkY14v5&date=${choice}`
   
     console.log(choice)
@@ -102,10 +105,11 @@ function fetchToday(){
   }
   
   function fetchPrev(){
-    const choice = document.querySelector('input').value.toLowerCase()-1
-    const url = `https://api.nasa.gov/planetary/apod?api_key=0Cgc2Xy7xAmaWHlG3pGwrrwDvtCVzbHNqgkY14v5&date=${choice}`
+    let prevDate = new Date(2022, 4, 10)
+    prevDate.setDate(prevDate.setDate()-1)
+    const url = `https://api.nasa.gov/planetary/apod?api_key=0Cgc2Xy7xAmaWHlG3pGwrrwDvtCVzbHNqgkY14v5&date=${prevDate}`
   
-    console.log(choice)
+    console.log(prevDate)
   
     fetch(url)
         .then(res => res.json()) // parse response as JSON
