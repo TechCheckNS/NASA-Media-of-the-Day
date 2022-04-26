@@ -16,6 +16,7 @@ function getFetch(){
       .then(data => {
         console.log(data)
 
+
         if( data.media_type === 'image'){
             document.querySelector('img').src = data.hdurl
             document.querySelector('iframe').style.display = 'none';
@@ -42,7 +43,8 @@ function fetchToday(){
     let todayDate = `${currentDate.getFullYear()}-${currentDate.getMonth()+1}-${currentDate.getDate()}`;
     console.log(todayDate)
     const url = `https://api.nasa.gov/planetary/apod?api_key=0Cgc2Xy7xAmaWHlG3pGwrrwDvtCVzbHNqgkY14v5&date=${todayDate}`
-  
+    document.querySelector('.prevMedia').style.visibility = 'hidden';
+    document.querySelector('.nextMedia').style.visibility = 'hidden';
 
   
     fetch(url)
